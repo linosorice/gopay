@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="<%= req.getLocale() %>"><head>
+  <meta charset="utf-8">
+  <title><%= __('landing.title') %></title>
+  <meta name="keywords" content="<%= __('landing.meta.keywords') %>">
+  <meta name="description" content="<%= __('landing.meta.description') %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="vendors/snow/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendors/snow/css/animate.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="vendors/snow/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/snow/css/main.min.css">
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+  <script src="vendors/snow/js/modernizr-2.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img style="height: 40px; padding-left: 20px;" src="vendors/snow/img/logo.svg" alt="Logo">
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/demo"><%= __('landing.demo') %></a></li>
+            <li><a href="#create" class="scroll"><%= __('landing.how_it_works') %></a></li>
+            <li><a href="#pricing" class="scroll"><%= __('landing.pricing') %></a></li>
+            <li><a href="#signup" class="scroll"><%= __('landing.register') %></a></li>
+            <li><a href="login"><%= __('landing.login') %></a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <img style="height: 40px" src="vendors/snow/img/logo.svg" alt="Logo">
+          </div>
+          <div class="col-xs-6 signin text-right navbar-nav">
+            <a href="login"><%= __('landing.login') %></a>
+          </div>
+        </div>
+
+
+
+        <div class="row header-info">
+          <div class="col-sm-10 col-sm-offset-1 text-center main_row">
+
+          <div class="row">
+            <div class="tablet col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+              <img src="vendors/snow/img/tablet.png" alt="Gopay - ricevi pagamenti da Telegram">
+            </div>
+          </div>
+
+
+            <h1 class="wow fadeIn"><%= __('landing.header.title') %></h1>
+            <br />
+            <p class="lead wow fadeIn" data-wow-delay="0.5s"><%= __('landing.header.subtitle') %></p>
+            <br />
+
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <div class="row">
+                  <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
+                    <a href="#create" class="btn btn-secondary btn-lg scroll"><%= __('landing.header.button_1') %></a>
+                  </div>
+                  <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
+                    <a href="demo" class="btn btn-primary btn-lg"><%= __('landing.header.button_2') %></a>
+                  </div>
+                </div><!--End Button Row-->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--<div class="mouse-icon hidden-xs">
+      <div class="scroll"></div>
+    </div>-->
+
+    <section id="create" class="pad-xl">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
+            <h2 class="gray"><%= __('landing.steps.title') %></h2>
+            <p class="lead gray"><%= __('landing.steps.subtitle') %></p>
+          </div>
+        </div>
+
+        <div class="iphone wow fadeInUp" data-wow-delay="1s">
+          <img src="vendors/snow/img/signup_3.png" alt="Gopay - ricevi pagamenti da Telegram" style="max-width: 544px">
+        </div>
+      </div>
+    </section>
+
+    <section id="main-info" class="pad-xl">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+            <hr class="line purple">
+            <h3><%= __('landing.steps.step_1.title') %></h3>
+            <p><%= __('landing.steps.step_1.text_1') %></p>
+            <p><%= __('landing.steps.step_1.text_2') %></p>
+            <p><%= __('landing.steps.step_1.text_3') %> <strong><%= __('landing.steps.step_1.text_4') %></strong></p>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
+            <hr  class="line blue">
+            <h3><%= __('landing.steps.step_2.title') %></h3>
+            <p><%= __('landing.steps.step_2.text_1') %></p>
+            <p><%= __('landing.steps.step_2.text_2') %></p>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
+            <hr  class="line yellow">
+            <h3><%= __('landing.steps.step_3.title') %></h3>
+            <p><%= __('landing.steps.step_3.text_1') %></p>
+            <p><%= __('landing.steps.step_3.text_2') %></p>
+            <p><%= __('landing.steps.step_3.text_3') %> <b><a style="text-decoration: underline;" href="#"><%= __('landing.steps.step_3.text_4') %></a><b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pad-lg" style="background: linear-gradient(135deg, rgba(27,67,95,1) 0%,rgba(60,114,101,1) 100%)">
+      <div class="container">
+        <div class="row margin-40">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <h2 class="white"><%= __('landing.pricing.title') %></h2>
+            <p class="white"><%= __('landing.pricing.subtitle') %></p>
+          </div>
+        </div>
+
+        <div class="row margin-50">
+
+          <div class="col-sm-6 col-sm-offset-3 pricing-container wow fadeInUp" data-wow-delay="0.5s" style="padding: 0 12px 0 12px">
+            <br />
+            <ul class="list-unstyled pricing-table text-center">
+    					<!--<li class="headline"><h4 class="white"><%= __('landing.pricing.box_1.title') %></h4></li>-->
+    					<li class="price"><div class="amount"><%= __('landing.pricing.box_1.price') %></div></li>
+    					<li class="info"><%= __('landing.pricing.box_1.subtitle') %></li>
+              <li class="features first"><%= __('landing.pricing.box_1.feature_1') %></li>
+              <li class="features"><%= __('landing.pricing.box_1.feature_2') %></li>
+              <li class="features"><%= __('landing.pricing.box_1.feature_3') %></li>
+              <li class="features"><%= __('landing.pricing.box_1.feature_4') %></li>
+              <li class="features"><%= __('landing.pricing.box_1.feature_5') %></li>
+              <!--<li class="features"><%= __('landing.pricing.box_1.feature_6') %></li>-->
+    					<li class="features last btn btn-secondary btn-wide"><a href="#signup" class="scroll"><%= __('landing.pricing.signup') %></a></li>
+    				</ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="press" class="pad-sm">
+      <div class="container">
+        <div class="row margin-40">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <h2 class="black"><%= __('landing.press.title') %></h2>
+            <p class="black"><%= __('landing.press.subtitle') %></p>
+          </div>
+        </div>
+        <div class="row margin-30 news-container">
+          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="0.8s">
+            <a href="https://telegram.org/" target="_blank">
+            <img class="news-img pull-left" src="images/telegram.jpg" alt="Telegram">
+            <p class="grey" style="margin-top: 29px; margin-bottom: 29px;"><%= __('landing.press.telegram') %></p>
+            </a>
+          </div>
+        </div>
+
+        <div class="row margin-30 news-container">
+          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="1.2s">
+            <a href="https://stripe.com/it" target="_blank">
+            <img class="news-img pull-left" src="images/stripe.png" alt="Stripe">
+            <p class="grey" style="margin-top: 24px;"><%= __('landing.press.stripe') %></p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="signup" class="pad-sm mobile-padding-bottom-30" style="background: #f2f2f2;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <i class="fa fa-envelope-o fa-sign-in margin-40"></i>
+            <h2 class="black"><strong style="color: #E96559"><%= __('landing.join.title_1') %></strong><br/><%= __('landing.join.title_2') %><br/><div><%= __('landing.join.title_3') %><strong style="color: #E96559"><%= __('landing.join.title_4') %></strong></h2>
+            <br/>
+
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <form method="post" action="/signup">
+                  <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="<%= __('landing.stripe.email') %>" required="">
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg" style="font-size: 20px;"><%= __('landing.stripe.register') %></button>
+                </form>
+              </div>
+            </div><!--End Form row-->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-4 text-left" style="color: #929496">
+            <p><small><%= __('landing.footer.tc_1') %>
+          </div>
+          <div class="col-sm-4 text-center" style="color: #929496">
+            <p><small><%= __('landing.footer.all_rights_reserved') %></small></p>
+            <ul class="list-inline social">
+              <li><%= __('landing.footer.social') %></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+       </div>
+
+      </div>
+    </footer>
+
+
+    <!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="vendors/snow/js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="vendors/snow/js/wow.min.js"></script>
+    <script src="vendors/snow/js/bootstrap.min.js"></script>
+    <script src="vendors/snow/js/main.js"></script>
+
+    </body>
+</html>

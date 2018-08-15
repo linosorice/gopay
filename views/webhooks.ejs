@@ -1,0 +1,74 @@
+<div class="page-title">
+  <div class="title_left">
+    <h3><%= __('settings.title') %></h3>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2><%= __('webhooks.purchase.title') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content" style="min-height: 500px">
+        <br />
+        <form action="/webhooks" method="post" class="form-horizontal form-label-left" novalidate>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="purchase"><%= __('webhooks.purchase.route') %></label>
+            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+              <span class="input-group-btn"><button type="button" class="btn btn-primary">POST</button></span>
+              <input id="purchase" type="text" class="form-control" name="purchase" placeholder="http://..." <% if (webhooks['purchase'] != null) { %>value="<%= webhooks['purchase'] %>"<%}%>/>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-10">
+            <button type="button submit" type="submit" class="btn btn-success"><%= __('webhooks.button') %></button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-6 col-xs-6">
+    <section class="x_panel">
+      <div class="x_title">
+        <h2>Schema</h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content" style="min-height: 500px">
+        <p>
+          {                                     <br/>
+            &emsp;<strong>buyer</strong>: 'string',              <br/>
+            &emsp;<strong>buyer_last_name</strong>: 'string',    <br/>
+            &emsp;<strong>buyer_username</strong>: 'string',     <br/>
+            &emsp;<strong>code</strong>: 'string',               <br/>
+            &emsp;<strong>date</strong>: 'date',                 <br/>
+            &emsp;<strong>buyerEmail</strong>: 'string',         <br/>
+            &emsp;<strong>buyerAddress1</strong>: 'string',      <br/>
+            &emsp;<strong>buyerAddress2</strong>: 'string',      <br/>
+            &emsp;<strong>buyerPostCode</strong>: 'string',      <br/>
+            &emsp;<strong>buyerCity</strong>: 'string',          <br/>
+            &emsp;<strong>buyerState</strong>: 'string',         <br/>
+            &emsp;<strong>offer</strong>: {                      <br/>
+              &emsp;&emsp;<strong>name</strong>: 'string',             <br/>
+              &emsp;&emsp;<strong>description</strong>: 'string',      <br/>
+              &emsp;&emsp;<strong>expiration</strong>: 'date',         <br/>
+              &emsp;&emsp;<strong>image</strong>: 'string' (url),      <br/>
+              &emsp;&emsp;<strong>price</strong>: 'float',             <br/>
+              &emsp;&emsp;<strong>currency</strong>: 'string',         <br/>
+              &emsp;&emsp;<strong>creation_date</strong>: 'date',      <br/>
+              &emsp;&emsp;<strong>quantity</strong>: 'int' (or null),  <br/>
+              &emsp;&emsp;<strong>shipping</strong>: 'boolean'         <br/>
+            &emsp;}                             <br/>
+          }
+        </p>
+      </div>
+    </section>
+  </div>
+
+</div>

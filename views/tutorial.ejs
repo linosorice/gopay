@@ -1,0 +1,225 @@
+<style>
+.form_wizard .stepContainer {
+  display: none
+}
+</style>
+
+<h1><%= __('tutorial.welcome') %></h1>
+
+<div class="x_panel">
+  <div class="x_content">
+
+    <p><%= __('tutorial.text_1') %></p>
+    <p><%= __('tutorial.text_2') %></p>
+    <p><%= __('tutorial.text_3') %><a href="#">Telegram</a></p>
+
+    <hr/>
+
+    <div id="wizard" class="form_wizard wizard_horizontal">
+      <ul class="wizard_steps">
+        <li>
+          <a href="#step-1">
+            <span class="step_no">1</span>
+            <span class="step_descr">
+              Step 1<br>
+              <small><%= __('tutorial.header.step_1') %></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#step-2">
+            <span class="step_no">2</span>
+            <span class="step_descr">
+              Step 2<br>
+              <small><%= __('tutorial.header.step_2') %></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#step-3">
+            <span class="step_no">3</span>
+            <span class="step_descr">
+              Step 3<br>
+              <small><%= __('tutorial.header.step_3') %></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#step-4">
+            <span class="step_no">4</span>
+            <span class="step_descr">
+              Step 4<br>
+              <small><%= __('tutorial.header.step_4') %></small>
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <form id="tutorial-form" action="/tutorial" method="post" novalidate>
+
+        <div id="step-1">
+          <h2 class="StepTitle"><%= __('tutorial.step_1.title') %></h2>
+          <div class="form-horizontal form-label-left">
+
+            <ul class="to_do">
+              <li><%= __('tutorial.step_1.text_1') %> <a href="https://web.telegram.org">Telegram Web</a></li>
+              <li><%= __('tutorial.step_1.text_2') %></li>
+              <li><%= __('tutorial.step_1.text_3') %></li>
+              <li><%= __('tutorial.step_1.text_4') %></li>
+            </ul>
+
+            <img class="center-block" src="images/tutorial_1.png" alt="tutorial_1" style="margin-bottom: 32px"/>
+
+            <div id="form-group-1" class="form-group item">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Bot Token <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="text" id="botToken" name="botToken" required="required" placeholder="es: 347198701:AAHsHs2yi3ZqPnyzAFGt9KfgLyc7NOf5Cd0" class="form-control col-md-7 col-xs-12" data-validate-length="44" <% if (req.session.user.botToken != null) { %>value="<%= req.session.user.botToken %>"<%}%>/>
+                </div>
+            </div>
+
+        </div>
+      </div>
+
+      <div id="step-2">
+        <h2 class="StepTitle"><%= __('tutorial.step_2.title') %></h2>
+
+        <p><%= __('tutorial.step_2.descr_1') %><a href="https://stripe.com"><%= __('tutorial.step_2.descr_2') %></a>.</p>
+        <p><%= __('tutorial.step_2.descr_3') %></p>
+
+        <div class="form-horizontal form-label-left">
+
+          <ul class="to_do">
+            <li><%= __('tutorial.step_2.text_1') %></li>
+            <li><%= __('tutorial.step_2.text_2') %></li>
+            <li><%= __('tutorial.step_2.text_3') %></li>
+            <li><%= __('tutorial.step_2.text_4') %></li>
+            <li><%= __('tutorial.step_2.text_5') %></li>
+          </ul>
+
+          <img class="center-block" src="images/tutorial_2.png" alt="tutorial_2" style="margin-bottom: 32px"/>
+
+          <div id="form-group-2" class="form-group item">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Stripe Token <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" id="paymentToken" name="paymentToken" required="required" placeholder="es: 392684063:TEST:MGU3ZjkxG2VlZTkw" class="form-control col-md-7 col-xs-12" data-validate-length="30" <% if (req.session.user.paymentToken != null) { %>value="<%= req.session.user.paymentToken %>"<%}%>>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="step-3">
+        <h2 class="StepTitle"><%= __('tutorial.step_3.title') %></h2>
+        <div class="form-horizontal form-label-left">
+
+          <ul class="to_do">
+            <li><%= __('tutorial.step_3.text_1') %><strong><%= __('tutorial.step_3.text_2') %></strong></li>
+            <li><%= __('tutorial.step_3.text_3') %></li>
+          </ul>
+
+          <img class="center-block" src="images/tutorial_3.png" alt="tutorial_3" style="margin-bottom: 32px"/>
+
+          <ul class="to_do">
+            <li><%= __('tutorial.step_3.text_4') %></li>
+            <li><%= __('tutorial.step_3.text_5') %><strong><%= __('tutorial.step_3.text_6') %></strong></li>
+          </ul>
+
+          <img class="center-block" src="images/tutorial_4.png" alt="tutorial_4" style="margin-bottom: 32px"/>
+
+          <div id="form-group-3" class="form-group item">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><%= __('tutorial.step_3.telegram_channel') %><span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" id="channel" name="channel" required="required" placeholder="<%= __('tutorial.step_3.telegram_channel_placeholder') %>" class="form-control col-md-7 col-xs-12" data-validate-length="1" <% if (req.session.user.channel != null) { %>value="<%= req.session.user.channel %>"<%}%>>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="step-4" class="content" style="display: none;">
+        <div class="form-horizontal form-label-left">
+
+          <h2><%= __('tutorial.step_4.title') %></h2>
+          <p><%= __('tutorial.step_4.text') %></p>
+
+        </div>
+      </div>
+
+      <form>
+
+      <!--<div class="actionBar">
+        <div class="msgBox">
+          <div class="content"></div>
+          <a href="#" class="close">X</a>
+        </div>
+        <div class="loader">Loading</div>
+        <a href="#" class="buttonFinish buttonDisabled btn btn-default">Finish</a>
+        <a href="#" class="buttonNext btn btn-success">Next</a>
+        <a href="#" class="buttonPrevious buttonDisabled btn btn-primary">Previous</a>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+<p><%= err %></p>
+
+<script src="vendors/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#wizard').smartWizard({
+      labelNext: 'Avanti',
+      labelPrevious: 'Indietro',
+      labelFinish: 'Invia',
+      onLeaveStep: leaveAStepCallback,
+      onFinish: onFinishCallback,
+      ajaxType: 'POST'
+    });
+
+    var botTokenValid = false;
+
+    function leaveAStepCallback(obj, context) {
+      if (context.fromStep < context.toStep) {
+        return validateSteps(context.fromStep);
+      } else {
+        return true;
+      }
+    }
+
+    function validateSteps(stepnumber) {
+
+      if (stepnumber == 1 && $('#botToken').val().length == 0) {
+        $('#form-group-1').addClass('has-error');
+        alert('Inserisci il token del bot');
+        return false;
+      } else if (stepnumber == 2 && $('#paymentToken').val().length == 0) {
+        $('#form-group-2').addClass('has-error');
+        alert('Inserisci il token Stripe');
+        return false;
+      } else if (stepnumber == 3 && $('#channel').val().length == 0) {
+        $('#form-group-3').addClass('has-error');
+        alert('Inserisci il nome del tuo canale');
+        return false;
+      }
+
+      return true;
+    }
+
+    function onFinishCallback(objs, context) {
+      $('#tutorial-form').submit();
+    }
+
+    function checkBotToken(token) {
+      return fetch('https://api.telegram.org/bot' + token + '/getUpdates')
+      .then(function(response) {
+        return response.json()
+      }).then(function(json) {console.log(json);
+        return(json.ok);
+      });
+      console.log('teest');
+    }
+  });
+</script>

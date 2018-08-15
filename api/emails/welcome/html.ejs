@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title><%= __('emails.welcome.title') %></title>
+
+  <style type="text/css">
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#F2F2F2;">
+  <center>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#2A3F54">
+        <tr>
+            <td align="center" valign="top" style="color: white">
+
+              <h1><%= req.__('emails.welcome.text_1') %></h1>
+              <br>
+
+            </td>
+        </tr>
+    </table>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F2F2F2">
+        <tr>
+            <td align="center" valign="top">
+
+              <h2><%= req.__('emails.welcome.text_2') %> <%= password %></h2>
+              <p><%= req.__('emails.welcome.text_3') %> <a href="<%= sails.getBaseurl() %>/login"><%= req.__('emails.welcome.text_4') %></a><p>
+
+              <br/>
+
+            </td>
+        </tr>
+    </table>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#2A3F54">
+        <tr>
+            <td align="center" valign="top" style="color: white">
+
+              <h2>Gopay</h2>
+
+            </td>
+        </tr>
+    </table>
+  </center>
+</body>
+</html>

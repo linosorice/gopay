@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="<%= req.getLocale() %>"><head>
+  <meta charset="utf-8">
+  <title><%= __('signup.title') %></title>
+  <meta name="keywords" content="<%= __('signup.meta.keywords') %>">
+  <meta name="description" content="<%= __('signup.meta.description') %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+  <style>@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');</style>
+
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="vendors/landingpage/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+</head>
+
+<body>
+<!-- banner -->
+    <section id="my-banner">
+        <img id="my-banner-img" src="vendors/landingpage/img/bg.png" alt="my-banner background" />
+        <div class="content-wrapper">
+            <h1 id="my-banner-h1"><%= __('signup.text_1') %><span id="accent"><%= __('signup.text_2') %></span><%= __('signup.text_3') %></h1>
+            <p id="my-banner-p"><%= __('signup.text_4') %></p>
+            <img id="my-banner-img-caret" src="vendors/landingpage/img/down-arrow.png" alt="down arrow">
+        </div>
+    </section>
+    <!-- sub-heading -->
+    <section id="sub-heading">
+        <div class="content-wrapper">
+            <p id="sub-heading-primary"><strong><%= __('signup.text_5') %></strong></p>
+            <p id="sub-heading-secondary"><%= __('signup.text_6') %></p>
+        </div>
+    </section>
+    <!-- stats -->
+    <section id="stats">
+        <div class="content-wrapper">
+            <h2><p><%= __('signup.text_7') %></p></h2>
+        </div>
+    </section>
+
+    <!-- How does it work -->
+    <section id="how-works">
+        <div class="content-wrapper">
+            <h2 id="how-works-header"><%= __('signup.text_8') %></h2>
+            <div class="step" id="step1">
+                <div class="left">
+                    <p class="num" id="num1">1</p> <h3 id="how-works-01-header"><%= __('signup.text_9') %><a href="#start-today"><%= __('signup.text_10') %></a><%= __('signup.text_11') %></h3>
+                    <p id="how-works-01-copy"><%= __('signup.text_12') %></p>
+                </div>
+                <a id="how-works-01-image-link" href="#start-today"><div class="image" id="register-btn"><img src="vendors/landingpage/img/register-btn.png" id="register-button" alt="register"></div></a>
+            </div>
+            <div class="step" id="step2">
+                <div class="right">
+                    <p class="num" id="num2">2</p><h3 id="how-works-02-header"><%= __('signup.text_13') %></h3>
+                    <p id="how-works-02-copy"><%= __('signup.text_14') %></p>
+                </div>
+                <div class="left" id="templates"><img id="how-works-02-img" src="vendors/landingpage/img/templates.png" alt="templates"></div>
+            </div>
+            <div class="step" id="step3">
+                <div class="left">
+                    <p class="num" id="num3">3</p><h3 id="how-works-03-header"><%= __('signup.text_15') %></h3>
+                    <p id="how-works-03-copy"><%= __('signup.text_16') %></p>
+                </div>
+                <div class="image submit"><img id="how-works-03-img" src="vendors/landingpage/img/submit.png" alt="submit"></div>
+            </div>
+        </div>
+    </section>
+    <!-- start-today -->
+    <section id="start-today">
+        <div class="content-wrapper">
+            <h2 id="start-today-header"><%= __('signup.text_17') %></h2>
+            <form method="post" action="/signup">
+                <input class="email-register" name="email" placeholder="<%= __('signup.text_20') %>" required="">
+                <button type="submit" id="start-today-link" class="click-btn"><u><%= __('signup.text_18') %></u><%= __('signup.text_19') %><span>»</span></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <section id="footer">
+        <div class="content-wrapper">
+            <div id="copyright">
+                <p>Gopay</p>
+            </div>
+            <div id="socials">
+                <a id="socials-facebook-link" href="#"><i class="fa fa-facebook"></i></a>
+                <a id="socials-twitter-link" href="#"><i class="fa fa-twitter"></i></a>
+                <a id="socials-instagram-link" href="#"><i class="fa fa-instagram"></i></a>
+                <a id="socials-telegram-link" href="#"><i class="fa fa-telegram"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="vendors/landingpage/js/html5shiv.js"></script>
+    <script src="vendors/landingpage/js/jquery-1.9.1.min.js"></script>
+    <script src="vendors/landingpage/js/functions.js"></script>
+
+    <!-- Cookie Consent -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#edeff5",
+            "text": "#838391"
+          },
+          "button": {
+            "background": "#70cbce",
+            "text": "#fff"
+          }
+        },
+        "position": "bottom-right",
+        "content": {
+          "message": "<%= __('signup.cookies.message') %>",
+          "dismiss": "<%= __('signup.cookies.dismiss') %>",
+          "link": "<%= __('signup.cookies.info') %>",
+          "href": "/privacy"
+        }
+      })});
+    </script>
+
+    </body>
+</html>

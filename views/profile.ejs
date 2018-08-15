@@ -1,0 +1,191 @@
+<div class="">
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2><%= __('reports.title') %></h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+            <div class="profile_img">
+              <div id="crop-avatar">
+                <!--<img class="img-responsive avatar-view" src="vendors/gentelella/production/images/picture.jpg" alt="Avatar" title="Change the avatar">-->
+              </div>
+            </div>
+
+            <ul class="list-unstyled user_data">
+              <!--<li><i class="fa fa-shopping-cart user-profile-icon"></i> <%= user.credits %> credits
+              </li>-->
+              <% if (user.channel) { %>
+                <li>
+                  <i class="fa fa-send user-profile-icon"></i> <%= user.channel %>
+                </li>
+              <% } %>
+
+            </ul>
+            <!--<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Modifica Impostazioni</button>-->
+            <a href="/setting" class="btn btn-success"><%= __('reports.settings') %></a>
+
+          </div>
+          <div class="col-md-9 col-sm-9 col-xs-12">
+
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><%= __('reports.sales.title') %></h2>
+                  <ul class="nav navbar-right panel_toolbox" style="min-width: 0px;">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <!--<p class="text-muted font-13 m-b-30">
+                    Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.
+                  </p>-->
+
+                  <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th><%= __('reports.sales.buyer') %></th>
+                        <th><%= __('reports.sales.code') %></th>
+                        <th><%= __('reports.sales.date') %></th>
+                        <th><%= __('reports.sales.name') %></th>
+                        <th><%= __('reports.sales.price') %></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for (var purchase of purchases) { %>
+                        <tr>
+                          <td><%= purchase.buyer %></td>
+                          <td><%= purchase.code %></td>
+                          <% var d = new Date(purchase.date) %>
+                          <td><%= ("0" + d.getDate()).slice(-2) %>-<%= ("0"+(d.getMonth()+1)).slice(-2) %>-<%= d.getFullYear() %> <%= ("0" + d.getHours()).slice(-2) %>:<%= ("0" + d.getMinutes()).slice(-2) %>:<%= ("0" + d.getSeconds()).slice(-2) %></td>
+                          <td><%= purchase.offer.name %></td>
+                          <td><%= currencies[purchase.offer.currency] %> <%= purchase.offer.price %></td>
+                        </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><%= __('reports.shipping.title') %></h2>
+                  <ul class="nav navbar-right panel_toolbox" style="min-width: 0px;">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <!--<p class="text-muted font-13 m-b-30">
+                    Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.
+                  </p>-->
+
+                  <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th><%= __('reports.shipping.buyer') %></th>
+                        <th><%= __('reports.shipping.address_1') %></th>
+                        <th><%= __('reports.shipping.address_2') %></th>
+                        <th><%= __('reports.shipping.code') %></th>
+                        <th><%= __('reports.shipping.date') %></th>
+                        <th><%= __('reports.shipping.name') %></th>
+                        <th><%= __('reports.shipping.price') %></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for (var shipping of shippings) { %>
+                        <tr>
+                          <td><%= shipping.buyer %></td>
+                          <td><%= shipping.buyerAddress1 + ' ' + shipping.buyerPostCode + ' ' + shipping.buyerCity + ' ' + shipping.buyerState %></td>
+                          <td><% if (shipping.buyerAddress2) { shipping.buyerAddress2 + ' ' + shipping.buyerPostCode + ' ' + shipping.buyerCity + ' ' + shipping.buyerState } %></td>
+                          <td><%= shipping.code %></td>
+                          <% var d = new Date(shipping.date) %>
+                          <td><%= ("0" + d.getDate()).slice(-2) %>-<%= ("0"+(d.getMonth()+1)).slice(-2) %>-<%= d.getFullYear() %> <%= ("0" + d.getHours()).slice(-2) %>:<%= ("0" + d.getMinutes()).slice(-2) %>:<%= ("0" + d.getSeconds()).slice(-2) %></td>
+                          <td><%= shipping.offer.name %></td>
+                          <td><%= currencies[shipping.offer.currency] %> <%= shipping.offer.price %></td>
+                        </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><%= __('reports.offers.title') %></h2>
+                  <ul class="nav navbar-right panel_toolbox" style="min-width: 0px;">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <ul class="list-unstyled msg_list">
+                    <% for (var offer of offers) { %>
+                      <li style="width: 100% !important">
+                        <a>
+                          <span>
+                            <img src="<%= offer.image %>" alt="img" class="profile-offer-img"/>
+                          </span>
+                          <span>
+                            <span><%= offer.name %></span>
+                            <% var d = new Date(offer.creation_date) %>
+                            <span style="font-weight: bold"><%= ("0" + d.getDate()).slice(-2) %>-<%= ("0"+(d.getMonth()+1)).slice(-2) %>-<%= d.getFullYear() %> <%= ("0" + d.getHours()).slice(-2) %>:<%= ("0" + d.getMinutes()).slice(-2) %>:<%= ("0" + d.getSeconds()).slice(-2) %></span>
+                          </span>
+                          <span class="message" style="font-size: 20px; font-weight: bold"><%= currencies[offer.currency] %> <%= offer.price %></span>
+                          <span class="message" style="margin-top: 8px">
+                            <span><%= offer.description %></span>
+                          </span>
+                        </a>
+                      </li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <ul class="nav navbar-right panel_toolbox"  style="min-width: 0px;">
+          <li><a class="collapse-link" href="/tutorial"><i class="fa fa-question"></i></a>
+          </li>
+          <li><a class="close-link" data-dismiss="modal"><i class="fa fa-close"></i></a>
+          </li>
+        </ul>
+        <h4 class="modal-title" id="myModalLabel">Impostazioni</h4>
+      </div>
+      <form action="/user" method="post" data-parsley-validate>
+        <div class="modal-body">
+          <label for="botToken">Token del Bot *:</label>
+          <input type="text" class="form-control" name="botToken" value="<%= req.session.user.botToken %>" data-parsley-trigger="change" required/>
+          <label for="paymentToken">Token Pagamento Stripe *:</label>
+          <input type="text" class="form-control" name="paymentToken" value="<%= req.session.user.paymentToken %>" data-parsley-trigger="change" required/>
+          <label for="channel">Canale Telegram *:</label>
+          <input type="text" class="form-control" name="channel" value="<%= req.session.user.channel %>" data-parsley-trigger="change" required/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+          <input class="btn btn-success submit" type="submit" value="Modifica"/>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>-->

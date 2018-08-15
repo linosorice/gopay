@@ -1,0 +1,168 @@
+<div class="page-title">
+  <div class="title_left">
+    <h3><%= __('offer.title') %></h3>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2><%= __('offer.subtitle') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <br />
+        <form action="/offer" method="post" class="form-horizontal form-label-left" novalidate>
+
+          <!-- Name -->
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"><%= __('offer.name') %> <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+              <input type="text" class="form-control has-feedback-left" name="name" placeholder="<%= __('offer.placeholder_name') %>" data-validate-length="6" required="required">
+              <span class="fa fa-font form-control-feedback left" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <!-- Image URL -->
+          <div class="item form-group">
+            <label for="image" class="control-label col-md-3 col-sm-3 col-xs-12"><%= __('offer.image') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+              <input name="image" class="form-control has-feedback-left" type="url" placeholder="<%= __('offer.placeholder_image') %>" required="required">
+              <a class="btn btn-primary" type="button" href="https://imgbb.com" target="_blank" style="margin: 12px 0 12px 0"><%= __('offer.upload') %></a>
+              <span class="fa fa-link form-control-feedback left" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="item form-group">
+            <label for="price" class="control-label col-md-3 col-sm-3 col-xs-12"><%= __('offer.price') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+              <input name="price" class="form-control has-feedback-left" type="number" placeholder="min: 1.00" data-validate-minmax="1," required="required">
+              <span class="fa fa-euro form-control-feedback left" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <!-- Currency -->
+          <div class="item form-group">
+            <label for="price" class="control-label col-md-3 col-sm-3 col-xs-12"><%= __('offer.currency') %></label>
+            <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+              <div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-available="EUR,USD,GBP" data-name="currency" data-flags="true">
+                <input type="hidden" value="">
+                <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                  <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                  <b class="caret"></b>
+                </a>
+                <div class="bfh-selectbox-options">
+                  <input type="text" class="bfh-selectbox-filter">
+                  <div role="listbox">
+                  <ul role="option">
+                  </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expiration Date -->
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="expiration"><%= __('offer.expiration') %> <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+              <input type="text" class="form-control has-feedback-left" id="single_cal2" name="expiration" required="required">
+              <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description"><%= __('offer.description') %> <span class="required">*</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <textarea class="form-control" rows="3" name="description" placeholder="<%= __('offer.placeholder_description') %>" required="required"></textarea>
+            </div>
+          </div>
+
+          <!-- Offer quantity -->
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" style="padding-top: 0"><%= __('offer.limit') %></label>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+              <div class="">
+                <label>
+                  <input id="quantity-toggle" type="checkbox" class="js-switch" name="limit"/>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div id="quantity" class="item form-group" style="display: none">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description"><%= __('offer.quantity') %> <span class="required">*</label>
+            <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+              <input id="quantity-input" type="number" class="form-control has-feedback-left" id="single_cal2" name="quantity" min="1" placeholder="4" data-validate-minmax="1," required="required">
+              <span class="fa fa-cubes form-control-feedback left" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <!-- Shipping -->
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" style="padding-top: 0"><%= __('offer.shipping') %></label>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+              <div class="">
+                <label>
+                  <input id="shipping" type="checkbox" class="js-switch" name="shipping" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="ln_solid"></div>
+
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-sm"><%= __('offer.button') %></button>
+            </div>
+          </div>
+
+          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel"><%= __('offer.modal.title') %></h4>
+                </div>
+                <div class="modal-body">
+                  <p><%= __('offer.modal.text') %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal"><%= __('offer.modal.cancel') %></button>
+                  <input class="btn btn-primary submit" type="submit" value="<%= __('offer.modal.confirm') %>"/>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="vendors/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $("#quantity-toggle").click(function() {
+    if ($("#quantity-toggle").prop('checked')) {
+      $("#quantity").fadeIn();
+    } else {
+      $("#quantity").fadeOut();
+    }
+  });
+});
+</script>

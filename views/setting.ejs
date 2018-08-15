@@ -1,0 +1,238 @@
+<div class="page-title">
+  <div class="title_left">
+    <h3><%= __('settings.title') %></h3>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <!--<div class="x_panel">
+      <div class="x_title">
+        <h2>Dati di fatturazione</h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <br />
+        <form action="/user/edit/info" method="post" class="form-horizontal form-label-left" novalidate>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nome/Ragione Sociale <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="name" <% if (req.session.user.name != null) { %>value="<%= req.session.user.name %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">Indirizzo <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="address" <% if (req.session.user.name != null) { %>value="<%= req.session.user.address %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cap">CAP <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="cap" <% if (req.session.user.name != null) { %>value="<%= req.session.user.cap %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="city">Città <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="city" <% if (req.session.user.name != null) { %>value="<%= req.session.user.city %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="province">Provincia <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="province" <% if (req.session.user.name != null) { %>value="<%= req.session.user.province %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="country">Paese <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <select name="country" class="form-control" required="required">
+                <option value=""></option>
+                <% for (key in countries) { %>
+                  <option <% if (req.session.user.country == key) { %>selected<% } %> value="<%= key %>"><%= countries[key] %></option>
+                <% } %>
+              </select>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fiscalCode">C.F.</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="fiscalCode" <% if (req.session.user.name != null) { %>value="<%= req.session.user.fiscalCode %>"<%}%>/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vat">P.IVA</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="vat" <% if (req.session.user.name != null) { %>value="<%= req.session.user.vat %>"<%}%>/>
+            </div>
+          </div>
+
+          <div class="ln_solid"></div>
+
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-info"><%= __('settings.button') %></button>
+            </div>
+          </div>
+
+          <div id="modal-info" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">Modifica dati fatturazione</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Sei sicuro di voler modificare i dati di fatturazione?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+                  <input class="btn btn-primary submit" type="submit" value="Modifica"/>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>-->
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Bot</h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <br />
+        <form action="/user/edit/bot" method="post" class="form-horizontal form-label-left" novalidate>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="botToken"><%= __('settings.bot.token_bot') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="botToken" <% if (req.session.user.botToken != null) { %>value="<%= req.session.user.botToken %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="paymentToken"><%= __('settings.bot.token_stripe') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="paymentToken" <% if (req.session.user.paymentToken != null) { %>value="<%= req.session.user.paymentToken %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="channel"><%= __('settings.bot.channel') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" name="channel" <% if (req.session.user.channel != null) { %>value="<%= req.session.user.channel %>"<%}%> required="required"/>
+            </div>
+          </div>
+
+          <div class="ln_solid"></div>
+
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-bot"><%= __('settings.button') %></button>
+            </div>
+          </div>
+
+          <div id="modal-bot" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel"><%= __('settings.bot.modal.title') %></h4>
+                </div>
+                <div class="modal-body">
+                  <p><%= __('settings.bot.modal.text') %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal"><%= __('settings.cancel') %></button>
+                  <input class="btn btn-primary submit" type="submit" value="<%= __('settings.button') %>"/>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="x_panel">
+      <div class="x_title">
+        <h2><%= __('settings.password.title') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <br />
+        <form action="/changePassword" method="post" class="form-horizontal form-label-left" novalidate>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="old_password"><%= __('settings.password.old') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="old_password" type="old_password" name="old_password" class="form-control" required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password"><%= __('settings.password.new') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="password" type="password" name="password" class="form-control" required="required"/>
+            </div>
+          </div>
+
+          <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password2"><%= __('settings.password.repeat') %> <span class="required">*</span></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control" required="required"/>
+            </div>
+          </div>
+
+          <div class="ln_solid"></div>
+
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-password"><%= __('settings.button') %></button>
+            </div>
+          </div>
+
+          <div id="modal-password" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel"><%= __('settings.password.modal.title') %></h4>
+                </div>
+                <div class="modal-body">
+                  <p><%= __('settings.password.modal.text') %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal"><%= __('settings.cancel') %></button>
+                  <input class="btn btn-primary submit" type="submit" value="<%= __('settings.button') %>"/>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

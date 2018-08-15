@@ -1,0 +1,27 @@
+<div class="clearfix"></div>
+<% if(req.session.flash && req.session.flash.info) { %>
+  <div class="alert alert-success alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <%= req.session.flash.info %>
+    <% req.session.flash.info = null %>
+  </div>
+<% } %>
+
+<% if(req.session.flash && req.session.flash.err) { %>
+  <div class="alert alert-danger alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <%= req.session.flash.err %>
+    <% req.session.flash.err = null %>
+  </div>
+<% } %>
+
+<% if(req.session.flash && req.session.flash.warn) { %>
+  <div class="alert alert-warning alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <%= req.session.flash.warn %>
+    <% req.session.flash.warn = null %>
+  </div>
+<% } %>

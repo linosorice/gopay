@@ -1,0 +1,184 @@
+<div class="row tile_count">
+  <div class="col-md-2 col-sm-6 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="fa fa-clock-o"></i><%= __('dashboard.header.offers_sent') %></span>
+    <div class="count"><%= numOffers %></div>
+    <!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>-->
+  </div>
+  <!--<div class="col-md-2 col-sm-6 col-xs-6 tile_stats_count">
+    <<span class="count_top"><i class="fa fa-user"></i><%= __('dashboard.header.offers_remaining') %></span>
+    <div class="count"><%= credits %></div>
+  </div>-->
+  <div class="col-md-2 col-sm-6 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="fa fa-user"></i><%= __('dashboard.header.sales') %></span>
+    <div class="count"><%= numPurchases %></div>
+    <!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>-->
+  </div>
+  <div class="col-md-2 col-sm-6 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="fa fa-user"></i><%= __('dashboard.header.incomes') %></span>
+    <div class="count green">€ <%= incomes %></div>
+    <!--<span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>-->
+  </div>
+  <!--<div class="col-md-2 col-sm-6 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="fa fa-user"></i><%= __('dashboard.header.fees') %></span>
+    <div class="count red">€ <%= fees %></div>
+  </div>
+  <div class="col-md-2 col-sm-6 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="fa fa-user"></i>
+    <%= __('dashboard.header.net') %>
+    </span>
+    <div class="count <% if(net > 0) { %> green <% } else if (net < 0) { %> red<% } %>">€ <%= net %></div>-->
+    <!--<span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>-->
+  <!--</div>-->
+</div>
+
+<!--<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="dashboard_graph">
+
+      <div class="row x_title">
+        <div class="col-md-6">
+          <h3>Incomes <small>bot</small></h3>
+        </div>
+        <div class="col-md-6">
+          <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+            <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div id="chart_plot_03" class="demo-placeholder"></div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>-->
+
+<br />
+
+<div class="row">
+	<div class="col-md-3 col-xs-12 widget widget_tally_box">
+    <div class="x_panel ui-ribbon-container fixed_height_320">
+      <div class="x_title">
+        <h2><%= __('dashboard.boxes.offer.top') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+	      <div class=text-center>
+	      	<i class="fa fa-tag fa-5x"></i>
+	      </div>
+
+        <h3 class="name_title"><%= __('dashboard.boxes.offer.title') %></h3>
+
+        <div class="divider"></div>
+
+        <p class="dashboard-box-descr"><%= __('dashboard.boxes.offer.subtitle') %></p>
+
+        <div class=text-center>
+        	<a class="btn btn-success text-center" href="offer"><%= __('dashboard.boxes.offer.button') %></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--<div class="col-md-3 col-xs-12 widget widget_tally_box">
+    <div class="x_panel ui-ribbon-container fixed_height_320">
+      <div class="ui-ribbon-wrapper">
+      </div>
+      <div class="x_title">
+        <h2><%= __('dashboard.boxes.credit.top') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+	      <div class=text-center>
+	      	<i class="fa fa-battery-empty fa-5x"></i>
+	      </div>
+
+        <h3 class="name_title"><%= __('dashboard.boxes.credit.title') %></h3>
+
+        <div class="divider"></div>
+
+        <p class="dashboard-box-descr"><%= __('dashboard.boxes.credit.subtitle') %></p>
+
+        <div class=text-center>
+        	<a class="btn btn-success text-center" href="/credit"><%= __('dashboard.boxes.credit.button') %></a>
+        </div>
+
+      </div>
+    </div>
+  </div>-->
+  <div class="col-md-3 col-xs-12 widget widget_tally_box">
+    <div class="x_panel ui-ribbon-container fixed_height_320">
+      <div class="x_title">
+        <h2><%= __('dashboard.boxes.tutorial.top') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+	      <div class=text-center>
+	      	<i class="fa fa-paper-plane fa-5x"></i>
+	      </div>
+
+        <h3 class="name_title"><%= __('dashboard.boxes.tutorial.title') %></h3>
+
+        <div class="divider"></div>
+
+        <p class="dashboard-box-descr"><%= __('dashboard.boxes.tutorial.subtitle') %></p>
+
+        <div class=text-center>
+        	<a class="btn btn-success text-center" href="tutorial"><%= __('dashboard.boxes.tutorial.button') %></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-xs-12 widget widget_tally_box">
+    <div class="x_panel ui-ribbon-container fixed_height_320">
+      <div class="x_title">
+        <h2><%= __('dashboard.boxes.report.top') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+	      <div class=text-center>
+	      	<i class="fa fa-user fa-5x"></i>
+	      </div>
+
+        <h3 class="name_title"><%= __('dashboard.boxes.report.title') %></h3>
+
+        <div class="divider"></div>
+
+        <p class="dashboard-box-descr"><%= __('dashboard.boxes.report.subtitle') %></p>
+
+        <div class=text-center>
+        	<a class="btn btn-success text-center" href="profile"><%= __('dashboard.boxes.report.button') %></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-xs-12 widget widget_tally_box">
+    <div class="x_panel ui-ribbon-container fixed_height_320">
+      <div class="x_title">
+        <h2><%= __('dashboard.boxes.settings.top') %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+	      <div class=text-center>
+	      	<i class="fa fa-cog fa-5x"></i>
+	      </div>
+
+        <h3 class="name_title"><%= __('dashboard.boxes.settings.title') %></h3>
+
+        <div class="divider"></div>
+
+        <p class="dashboard-box-descr"><%= __('dashboard.boxes.settings.subtitle') %></p>
+
+        <div class=text-center>
+        	<a class="btn btn-success text-center" href="setting"><%= __('dashboard.boxes.settings.button') %></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
